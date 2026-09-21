@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ShadowIgnis</title>
+  <meta name="theme-color" content="#0b0405">
+  <meta name="description" content="ShadowIgnis — profile">
+
+  <!-- Speed: warm up the connections the media comes from -->
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <button class="topbar__brand" id="toTop" aria-label="Back to top">
+        <img class="topbar__avatar" id="topAvatar" alt="" width="32" height="32" decoding="async">
+        <span class="topbar__name" id="topName"></span>
+      </button>
+      <div class="topbar__actions">
+        <button class="icon-btn" id="sortBtn" aria-label="Sort posts" title="Newest / Oldest">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h13M3 12h9M3 18h5M17 8v10m0 0-3-3m3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- ============ PROFILE HEADER ============ -->
+    <section class="profile" aria-label="Profile">
+      <div class="cover" aria-hidden="true">
+        <span class="ember e1"></span><span class="ember e2"></span><span class="ember e3"></span>
+        <span class="ember e4"></span><span class="ember e5"></span><span class="ember e6"></span>
+      </div>
+
+      <div class="profile__row">
+        <div class="avatar-wrap">
+          <img class="avatar" id="avatar" alt="Profile photo" width="132" height="132" decoding="async" fetchpriority="high">
+          <span class="avatar-ring" aria-hidden="true"></span>
+        </div>
+        <div class="profile__stats" id="stats"></div>
+      </div>
+
+      <h1 class="profile__name" id="name"></h1>
+      <p class="profile__handle" id="handle"></p>
+      <p class="profile__bio" id="bio"></p>
+
+      <nav class="tabs" role="tablist" aria-label="Post filters">
+        <button class="tab is-active" role="tab" aria-selected="true"  data-filter="all">All</button>
+        <button class="tab"           role="tab" aria-selected="false" data-filter="photo">Photos</button>
+        <button class="tab"           role="tab" aria-selected="false" data-filter="video">Videos</button>
+        <button class="tab"           role="tab" aria-selected="false" data-filter="text">Text</button>
+      </nav>
+    </section>
+
+    <!-- ============ FEED ============ -->
+    <section class="feed" id="feed" aria-live="polite" aria-label="Posts"></section>
+    <div class="feed__sentinel" id="sentinel" aria-hidden="true"></div>
+    <p class="feed__end" id="feedEnd" hidden>You've reached the end</p>
+    <p class="feed__empty" id="feedEmpty" hidden>Nothing here yet.</p>
+
+  </main>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Media viewer">
+    <button class="lightbox__close" id="lbClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M5 5l14 14M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" width="28" height="28"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="lightbox__stage" id="lbStage"></div>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">
+      <svg viewBox="0 0 24 24" width="28" height="28"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="lightbox__count" id="lbCount"></div>
+  </div>
+
+  <noscript><p style="padding:24px;color:#ddd;font-family:sans-serif">Please enable JavaScript to view this profile.</p></noscript>
+</body>
+</html>
